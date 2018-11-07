@@ -1,0 +1,27 @@
+
+#first
+./hdac-cli kcc create stream stream5 true
+./hdac-cli kcc create stream stream6 false
+
+#second
+./hdac-cli kcc subscribe stream5
+./hdac-cli kcc subscribe stream6
+
+./hdac-cli kcc liststreams
+
+#first
+./hdac-cli kcc publish stream5 "key1" "4f6e65206974656d"
+./hdac-cli kcc publish stream6 "key2" "5f6e65206974656d"
+
+#second
+./hdac-cli kcc publish stream5 "key1-2nd" "6f6e65206974656d"
+./hdac-cli kcc publish stream6 "key2-2nd" "7f6e65206974656d"
+
+./hdac-cli kcc liststreamkeys stream5
+
+./hdac-cli kcc liststreamkeyitems stream5 "key1"
+./hdac-cli kcc liststreamkeyitems stream5 "key1-2nd"
+
+./hdac-cli kcc liststreamkeys stream6
+
+./hdac-cli kcc liststreamkeyitems stream6 "key2"
