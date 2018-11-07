@@ -1,1 +1,16 @@
 hdac-cli kcc listpermissions create
+
+hdac-cli kcc createrawsendfrom "1NB8V9MB3z1Puatf94fN6kMzkoauCMQngzvKy" '{}' '[{"create":"stream","name":"stream8","open":false,"details":{"geo":"japan","origin":"BoJ"}}]' send
+
+hdac-cli kcc liststreams stream8
+
+hdac-cli kcc listpermissions stream8.*
+
+hdac-cli kcc getnewaddress
+
+hdac-cli kcc createrawsendfrom "1NB8V9MB3z1Puatf94fN6kMzkoauCMQngzvKy" '{"18EPgQJAEucV62CciSSsfknSYBCaC6bwB764Nt":{"permissions":{"for":"stream8","type":"write"}}}' '[]' send
+
+hdac-cli kcc listpermissions stream8.*
+
+hdac-cli kcc listpermissions stream8.write
+
